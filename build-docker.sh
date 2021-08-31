@@ -1,0 +1,1 @@
+docker build --no-cache -t fitbuddybot . && docker run --env-file conf/.env -d --name fitbuddybot -t fitbuddybot
