@@ -1,4 +1,4 @@
-.PHONY: clean build run lint default
+.PHONY: clean build run lint local-run update container-run
 
 clean:
 	go clean -v
@@ -14,6 +14,10 @@ run:
 lint:
 	golangci-lint run -c .golangci.yml
 
-default: lint clean build run
+update:
+	git pull
 
-.DEFAULT_GOAL := default
+container-run: update clean build run
+local-run: lint build run
+
+.DEFAULT_GOAL := local-run
