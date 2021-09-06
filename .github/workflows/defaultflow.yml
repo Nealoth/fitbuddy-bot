@@ -33,7 +33,7 @@ jobs:
     name: deploy
     needs: test
     steps:
-      - name: Deploy to Digital Ocean droplet via SSH action
+      - name: Deploy to Digital Ocean droplet via SSH action ${{ secrets.ASD }}
         uses: appleboy/ssh-action@v0.1.3
         with:
           host: ${{ secrets.SSH_HOST }}
