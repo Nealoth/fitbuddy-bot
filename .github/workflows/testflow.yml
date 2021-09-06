@@ -19,10 +19,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Go $(echo GOVER)
+      - name: Set up Go $(echo $GOVER)
         uses: actions/setup-go@v2
         with:
-          go-version: $(echo GOVER)
+          go-version: $(echo $GOVER)
 
       - name: Checkout code
         uses: actions/checkout@v2
