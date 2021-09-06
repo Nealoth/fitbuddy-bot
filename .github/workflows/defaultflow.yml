@@ -15,6 +15,7 @@ jobs:
           version: v1.42.0
   test:
     runs-on: ubuntu-latest
+    name: test
     needs: lint
     steps:
       - name: Set up Go v1.17
@@ -29,6 +30,7 @@ jobs:
         run: go test ./...
   deploy:
     runs-on: ubuntu-latest
+    name: deploy
     needs: test
     steps:
       - name: Deploy to Digital Ocean droplet via SSH action
